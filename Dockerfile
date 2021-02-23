@@ -4,7 +4,10 @@ FROM golang:1.15
 
 RUN apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
-    apt-get install --no-install-recommends -y latexmk texlive texlive-full
+    apt-get install --no-install-recommends -y \
+        latexmk \
+        tex-gyre \
+        texlive texlive-plain-generic texlive-science texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-lang-japanese
 
 RUN apt-get install --no-install-recommends -y xzdec wget && \
     tlmgr init-usertree && \
